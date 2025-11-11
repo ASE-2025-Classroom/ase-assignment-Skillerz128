@@ -22,8 +22,8 @@ namespace BOOSEcode2
             ypos = 100;
             pen = new Pen(Color.Green);
         }
-        public int Xpos { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int Ypos { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int Xpos { get => xpos; set => xpos = value; }
+        public int Ypos { get => ypos; set => ypos = value; }
         public object PenColour { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public void Circle(int radius, bool filled)
@@ -33,12 +33,12 @@ namespace BOOSEcode2
 
         public void Clear()
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
         public void DrawTo(int x, int y)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
         public object getBitmap()
@@ -59,7 +59,8 @@ namespace BOOSEcode2
 
         public void Reset()
         {
-            throw new NotImplementedException();
+            Xpos = 100;
+            Ypos = 100;
         }
 
         public void Set(int width, int height)

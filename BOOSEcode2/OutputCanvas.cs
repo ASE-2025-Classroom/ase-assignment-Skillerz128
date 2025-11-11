@@ -1,0 +1,85 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using BOOSE;
+
+namespace BOOSEcode2
+{
+    internal class OutputCanvas : ICanvas
+    {
+        Bitmap CanvasBitmap;
+        Graphics g;
+        private int xpos, ypos;
+        Pen pen;
+
+        public OutputCanvas(int xsize, int ysize)
+        {
+            CanvasBitmap = new Bitmap(xsize, ysize);
+            g = Graphics.FromImage(CanvasBitmap);
+            xpos = 100;
+            ypos = 100;
+            pen = new Pen(Color.Green);
+        }
+        public int Xpos { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int Ypos { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public object PenColour { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
+        public void Circle(int radius, bool filled)
+        {
+            g.DrawEllipse(pen, xpos, ypos, radius * 2, radius * 2);
+        }
+
+        public void Clear()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void DrawTo(int x, int y)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object getBitmap()
+        {
+            return CanvasBitmap;
+        }
+
+        public void MoveTo(int x, int y)
+        {
+            Xpos = x;
+            Ypos = y;
+        }
+
+        public void Rect(int width, int height, bool filled)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Reset()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Set(int width, int height)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void SetColour(int red, int green, int blue)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Tri(int width, int height)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void WriteText(string text)
+        {
+            throw new NotImplementedException();
+        }
+    }
+}

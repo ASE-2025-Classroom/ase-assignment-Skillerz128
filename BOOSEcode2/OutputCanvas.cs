@@ -54,9 +54,18 @@ namespace BOOSEcode2
 
         public void Rect(int width, int height, bool filled)
         {
-            throw new NotImplementedException();
+            // Draw a rectangle starting from the current position (xPos, yPos)
+            if (filled)
+            {
+                // Draw a filled rectangle
+                g.FillRectangle(new SolidBrush(pen.Color), xpos, ypos, width, height);
+            }
+            else
+            {
+                // Draw only the outline
+                g.DrawRectangle(pen, xpos, ypos, width, height);
+            }
         }
-
         public void Reset()
         {
             Xpos = 100;

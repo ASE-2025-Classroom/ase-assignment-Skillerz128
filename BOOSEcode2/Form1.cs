@@ -164,11 +164,6 @@ namespace BOOSEcode2
                     continue;
 
                 // Split into command and arguments
-                /// <summary>
-                /// Converts text in the form "r,g,b" into three integers.
-                /// </summary>
-                /// <param name="s">The text containing three numbers.</param>
-                /// <returns>Three integers representing colour values.</returns>
 
                 int spaceIndex = line.IndexOf(' ');
                 string cmd = (spaceIndex < 0 ? line : line.Substring(0, spaceIndex)).ToLowerInvariant();
@@ -265,6 +260,11 @@ namespace BOOSEcode2
             return (int.Parse(parts[0]), int.Parse(parts[1]));
         }
 
+        /// <summary>
+        /// Converts text in the form "r,g,b" into three integers.
+        /// </summary>
+        /// <param name="s">The text containing three numbers.</param>
+        /// <returns>Three integers representing colour values.</returns>
         private static (int, int, int) ParseThreeInts(string s)
         {
             var parts = s.Split(',', StringSplitOptions.RemoveEmptyEntries)

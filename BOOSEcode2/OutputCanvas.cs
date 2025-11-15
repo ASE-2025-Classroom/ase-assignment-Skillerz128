@@ -28,12 +28,16 @@ namespace BOOSEcode2
 
         public void Circle(int radius, bool filled)
         {
-            g.DrawEllipse(pen, xpos, ypos, radius * 2, radius * 2);
+            int d = radius * 2;
+            int x = xpos - radius;
+            int y = ypos - radius;
+            g.DrawEllipse(pen, x, y, d, d);
         }
 
         public void Clear()
         {
-            //throw new NotImplementedException();
+            g.Clear(Color.White);
+            Reset();
         }
 
         public void DrawTo(int x, int y)
@@ -79,7 +83,7 @@ namespace BOOSEcode2
 
         public void SetColour(int red, int green, int blue)
         {
-            throw new NotImplementedException();
+            pen.Color = Color .FromArgb(red, green, blue); 
         }
 
         public void Tri(int width, int height)

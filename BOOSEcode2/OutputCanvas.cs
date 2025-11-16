@@ -11,7 +11,7 @@ namespace BOOSEcode2
     /// <summary>
     /// Canvas used by the BOOSE commands to draw shapes onto a bitmap.
     /// </summary>
-    internal class OutputCanvas : ICanvas
+    public class OutputCanvas : ICanvas
     {
         Bitmap CanvasBitmap;
         Graphics g;
@@ -94,8 +94,14 @@ namespace BOOSEcode2
 
         public void DrawTo(int x, int y)
         {
-            // Not implemented yet
+            // Draw a line from the current pen position to the new point
+            g.DrawLine(pen, Xpos, Ypos, x, y);
+
+            // Move the pen to the new point
+            Xpos = x;
+            Ypos = y;
         }
+
 
         public object getBitmap()
         {

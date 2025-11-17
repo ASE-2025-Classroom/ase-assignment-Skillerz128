@@ -97,7 +97,7 @@ namespace BOOSEcode2
             // Draw a line from the current pen position to the new point
             g.DrawLine(pen, Xpos, Ypos, x, y);
 
-            // Move the pen to the new point
+            // Moves the pen to the new point
             Xpos = x;
             Ypos = y;
         }

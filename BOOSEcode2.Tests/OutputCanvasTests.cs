@@ -8,13 +8,13 @@ namespace BOOSEcode2.Tests
         [TestMethod]
         public void MoveTo_SetsPenPosition()
         {
-            // Arrange
+            
             var canvas = new BOOSEcode2.OutputCanvas(500, 500);
 
-            // Act
+            
             canvas.MoveTo(150, 200);
 
-            // Assert
+            
             Assert.AreEqual(150, canvas.Xpos);
             Assert.AreEqual(200, canvas.Ypos);
         }

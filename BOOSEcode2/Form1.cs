@@ -80,7 +80,7 @@ namespace BOOSEcode2
             {
                 Text = "Clear",
                 Font = new Font("Calibri", 10),
-                Left = 100,    // next to Run button
+                Left = 100,    
                 Top = 670,
                 Width = 80,
                 Height = 30
@@ -91,7 +91,7 @@ namespace BOOSEcode2
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // Nothing needed here for now.
+          
         }
 
         private void RunButton_Click(object sender, EventArgs e)

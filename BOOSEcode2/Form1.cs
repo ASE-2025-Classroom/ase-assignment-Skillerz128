@@ -6,9 +6,6 @@ using System.Windows.Forms;
 
 namespace BOOSEcode2
 {
-    /// <summary>
-    /// Main form that shows the editor and drawing area.
-    /// </summary>
     public partial class Form1 : Form
     {
         private OutputCanvas canvas;
@@ -20,9 +17,6 @@ namespace BOOSEcode2
         private Button runButton;
         private Button clearButton;
 
-        /// <summary>
-        /// Sets up the form, editor and canvas.
-        /// </summary>
         public Form1()
         {
             InitializeComponent();
@@ -33,9 +27,11 @@ namespace BOOSEcode2
             canvas = new OutputCanvas(1000, 600);
             canvas.Clear();
 
+            OutputWrite.SetCanvas(canvas);
+
             factory = new OutputCommandFactory();
             program = new StoredProgram(canvas);
-            parser = new Parser(factory, program);
+            parser = new OutputParser(factory, program);
 
             CreateEditorControls();
 
@@ -45,9 +41,6 @@ namespace BOOSEcode2
             Debug.WriteLine(AboutBOOSE.about());
         }
 
-        /// <summary>
-        /// Access to the drawing canvas.
-        /// </summary>
         public OutputCanvas Canvas => canvas;
 
         private void CreateEditorControls()
@@ -80,7 +73,7 @@ namespace BOOSEcode2
             {
                 Text = "Clear",
                 Font = new Font("Calibri", 10),
-                Left = 100,    
+                Left = 100,
                 Top = 670,
                 Width = 80,
                 Height = 30
@@ -91,7 +84,6 @@ namespace BOOSEcode2
 
         private void Form1_Load(object sender, EventArgs e)
         {
-          
         }
 
         private void RunButton_Click(object sender, EventArgs e)
@@ -99,10 +91,8 @@ namespace BOOSEcode2
             try
             {
                 canvas.Clear();
-
                 parser.ParseProgram(programTextBox.Text);
                 program.Run();
-
                 Invalidate();
             }
             catch (BOOSE.CanvasException ex)
@@ -126,8 +116,8 @@ namespace BOOSEcode2
         private void ClearButton_Click(object sender, EventArgs e)
         {
             programTextBox.Text = string.Empty;
-            canvas.Clear();                     
-            Invalidate();                       
+            canvas.Clear();
+            Invalidate();
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
@@ -140,9 +130,6 @@ namespace BOOSEcode2
             }
         }
 
-        /// <summary>
-        /// Runs a script directly.
-        /// </summary>
         public void RunScript(string source)
         {
             canvas.Clear();
@@ -151,6 +138,7 @@ namespace BOOSEcode2
         }
     }
 }
+
 
 
 
